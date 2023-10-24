@@ -1,0 +1,43 @@
+﻿@using System.Collections;
+@using DomesticStore.Models
+@model OrderViewModel
+
+@foreach (var item in Model.Products)
+{
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="@item.Img" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">@item.Name</h5>
+        <p class="card-text">@item.Description</p>
+         <p class="card-text"><small class="text-body-secondary">@item.Price руб</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form asp-action ="Add" asp-controller="Pack">
+<div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1" asp-for="Order.FirstName" asp-validation-for="Order.FirstName">Имя</span>
+        <input type="text" class="form-control" placeholder="Введите имя" aria-label="Username" aria-describedby="basic-addon1" asp-for="Order.FirstName">
+</div>
+<div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1" asp-for="Order.SecondName" asp-validation-for="Order.SecondName">Фамилия</span>
+        <input type="text" class="form-control" placeholder="Введите фамилию" aria-label="Username" aria-describedby="basic-addon1" asp-for="Order.SecondName">
+</div>
+<div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Электронная почта" aria-label="Recipient's username" aria-describedby="basic-addon2" asp-for="Order.Email">
+            <span class="input-group-text" id="basic-addon2" asp-for="Order.Email" asp-validation-for="Order.Email">Почта</span>
+</div>
+<div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1" asp-for="Order.Address" asp-validation-for="Order.Address">Адрес</span>
+        <input type="text" class="form-control" placeholder="Введите адрес" aria-label="Username" aria-describedby="basic-addon1" asp-for="Order.Address">
+</div>
+    <input type="hidden" asp-for="Order.ProductId" value="@item.Id">
+    <input class="btn btn-primary" type="submit" value="Заказать" />
+</form>
+}

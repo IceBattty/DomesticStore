@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DomesticStore.Models.Category>
+
+<div class="container">
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <a asp-controller="Home" asp-action="Products" asp-route-category="@item.Id">
+            <img src="@item.Img" class="card-img-top" alt="..."> </a>
+
+        <div class="card-body">
+            <p class="card-text">@item.Name</p>
+        </div>
+
+    </div>
+}
+</div>

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\VS2022\\Projects\\DomesticStore\\DomesticStore\\wwwroot\\Images\\kjujnbg2.png",
+      "PackagePath": "staticwebassets\\Images\\kjujnbg2.png"
+    },
+    {
+      "Id": "C:\\VS2022\\Projects\\DomesticStore\\DomesticStore\\wwwroot\\Images\\кофемашина.png",
+      "PackagePath": "staticwebassets\\Images\\кофемашина.png"
+    },
+    {
+      "Id": "C:\\VS2022\\Projects\\DomesticStore\\DomesticStore\\wwwroot\\Images\\плита.png",
+      "PackagePath": "staticwebassets\\Images\\плита.png"
+    },
+    {
+      "Id": "C:\\VS2022\\Projects\\DomesticStore\\DomesticStore\\wwwroot\\Images\\пылесос.png",
+      "PackagePath": "staticwebassets\\Images\\пылесос.png"
+    },
+    {
+      "Id": "C:\\VS2022\\Projects\\DomesticStore\\DomesticStore\\wwwroot\\Images\\холодильник.png",
+      "PackagePath": "staticwebassets\\Images\\холодильник.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DomesticStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.DomesticStore.props",
+      "PackagePath": "build\\DomesticStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.DomesticStore.props",
+      "PackagePath": "buildMultiTargeting\\DomesticStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.DomesticStore.props",
+      "PackagePath": "buildTransitive\\DomesticStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

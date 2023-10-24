@@ -1,0 +1,30 @@
+﻿@model DomesticStore.Models.Product
+
+<form class="Add" asp-action ="create" asp-controller="home">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default" asp-for="Name" asp-validation-for="Name">Название</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" asp-for="Name">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" asp-for="SerialNumber" asp-validation-for="SerialNumber">Серийный номер</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" asp-for="SerialNumber">
+    </div>
+    <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg" asp-for="Description" asp-validation-for="Description">Описание</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" asp-for="Description">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" asp-for="Img" asp-validation-for="Img">Url картинки</span>
+        <input type="url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" asp-for="Img">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" asp-for="Price" asp-validation-for="Price">Цена</span>
+        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" asp-for="Price">
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01" asp-for="CategoryId">Вид</label>
+        <select class="form-select" id="inputGroupSelect01" asp-for="CategoryId" asp-items="ViewBag.Categoies">
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>

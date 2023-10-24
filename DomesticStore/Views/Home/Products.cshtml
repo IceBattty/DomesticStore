@@ -1,0 +1,56 @@
+﻿@model DomesticStore.Models.ProductListViewModel
+<div class="product">
+<form method="get">
+    <div>
+        <label>Категория: </label>
+        <select class="form-select" name="category" asp-items="Model.Categories"></select>
+
+        <button type="submit" class="btn btn-primary">Фильтр</button>
+    </div>
+</form>
+<div class="ProductItems">
+@foreach (var item in Model.Products)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="@item.Img" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <br>
+            <p class="card-text">@item.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Серийный номер: @item.SerialNumber</li>
+            <li class="list-group-item">Цена: @item.Price руб.</li>
+            <li class="list-group-item">
+                @{
+                    switch (item.CategoryId)
+                    {
+                        case 1:
+                            ViewBag.Result = "Плиты";
+                            break;
+                        case 2:
+                            ViewBag.Result = "Холодильники";
+                            break;
+                        case 3:
+                            ViewBag.Result = "Пылесосы";
+                            break;
+                        case 4:
+                            ViewBag.Result = "Кофемашинки";
+                            break;
+                    }
+                }
+                Вид: @ViewBag.Result
+            </li>
+        </ul>
+        <div class="card-body">
+            <form asp-controller="Home" asp-action="Delete" method="post" asp-route-id="@item.Id">
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
+            <form asp-controller="Pack" asp-action="Order" method="post" asp-route-product="@item.Id">
+                <button type="submit" class="btn btn-success">Заказать</button>
+            </form>
+        </div>
+    </div>
+}
+</div>
+</div>
